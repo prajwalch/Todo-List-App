@@ -64,8 +64,10 @@ function getFromLocalStorage() {
     `<div class="todo-item">
       ${checkCompleted(item.name, item.completed)}
       <span>
-        <a href="#" class="complete-todo" onclick="toggleCompleted('${item.name}')">✔</a>
-        <a href="#2" class="delete-todo" onclick="deleteTodo('${item.name}')">❌</a>
+        <a href="#" class="complete-todo" onclick="toggleCompleted('${item.name}')">✔
+        </a>
+        <a href="#2" class="delete-todo" onclick="deleteTodo('${item.name}')">❌
+        </a>
       </span>
     </div>`
   })
@@ -79,7 +81,10 @@ function appendOnDom(todoName) {
   div.setAttribute('class', 'todo-item')
   li.textContent = todoName
   span.innerHTML = 
-  `<a href="#" class="complete-todo" onclick="toggleCompleted('${todoName}')">✔</a> <a href = "#2"class = "delete-todo" onclick="deleteTodo('${todoName}')">❌</a>`
+  `<a href="#" class="complete-todo" onclick="toggleCompleted('${todoName}')">✔
+   </a> 
+   <a href = "#2"class = "delete-todo" onclick="deleteTodo('${todoName}')">❌
+   </a>`
   div.appendChild(li)
   div.appendChild(span)
   todoItemsContainer.appendChild(div)
@@ -124,7 +129,7 @@ function deleteTodo(todoName) {
   
   todosArray.forEach(item => {
     if (item.name === todoName) {
-      todosArray.splice(item, 1)
+      todosArray.splice(todosArray.indexOf(item), 1)
     }
   })
   
