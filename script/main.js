@@ -28,9 +28,9 @@ function addTodo() {
 function validInput(todoName) {
   const regex = /[#*$&:;/?%]/
   
-  if (!todoName) return alert('Name is not mention!!')
-  if (todoName.match(regex)) return alert('Special character is not allowed!!')
-  if ((todoName.length) <= 5) return alert('Given name is very short!!')
+  if (!todoName) return alert('Look like you forget to type the name!')
+  if (todoName.match(regex)) return alert('Special characters are not allowed!!')
+  if ((todoName.length) <= 5) return alert('Less then 5 characters are not allowed!')
   return true
 }
 
@@ -49,6 +49,7 @@ function putLocalStorage(todosObject) {
 }
 
 function getFromLocalStorage() {
+  alert('Only greater then 5 and less then 30 characters are allowed for name!')
   const checkCompleted = (name, status) => {
     if (status === true) {
       return `<li class="completed-todo">${name}</li>`
